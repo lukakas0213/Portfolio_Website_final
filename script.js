@@ -73,9 +73,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     <br>
                     student at the University of Maryland. I have a strong passion for
                     <br>
-                    solving real-world problems through programming and technol-
+                    <span class="yellowHL">solving real-world problems through programming and technol-
                     <br>
-                    ogy. My interests lie in Artificial Intelligence (Al), Machine Learn-
+                    ogy. </span>My interests lie in Artificial Intelligence (Al), Machine Learn-
                     <br>
                     ing, and Data Analysis. I aim to create innovative projects that 
                     <br>
@@ -146,3 +146,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     hiddenElements.forEach((el) => observer.observe(el));  // 모든 .hidden 요소를 감시
 });
+
