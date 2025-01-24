@@ -91,9 +91,25 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
         } else if (target === 'projects') {
             aboutMeSection.innerHTML = `
-                <h2>Projects</h2>
-                <p>여러 프로젝트를 진행하며 많은 경험을 얻었습니다.</p>
-                <img src="projects.jpg" alt="Projects Image" />
+            <div class="projectContainer">
+                <div class="GoalasoBox box">
+                    <img class="goalasoImg1" src="https://github.com/lukakas0213/lucasportfolio/blob/0b2e7a44778418329d4162754a683f1b25b5e16f/3.%20Projects/Projects/Golaso/goalaso%20tnl.png?raw=true" alt="Goalaso Project">
+                    <img class="goalasoDisc" src="https://github.com/lukakas0213/lucasportfolio/blob/0b2e7a44778418329d4162754a683f1b25b5e16f/3.%20Projects/Projects/Golaso/Goalaso%20description.png?raw=true">
+                    <img class="goalasoText" src="https://github.com/lukakas0213/lucasportfolio/blob/0b2e7a44778418329d4162754a683f1b25b5e16f/3.%20Projects/Projects/Golaso/GOALASO.png?raw=true">
+               
+                </div>
+                <div class="TurnitinBox box">
+                    <img class="turnitinImg1" src="https://github.com/lukakas0213/lucasportfolio/blob/0b2e7a44778418329d4162754a683f1b25b5e16f/3.%20Projects/Projects/TURN%20IT%20IN/tii%20tnl.png?raw=true" alt="Turnitin Project">
+                    <img class="turnitinDisc" src="https://github.com/lukakas0213/lucasportfolio/blob/0b2e7a44778418329d4162754a683f1b25b5e16f/3.%20Projects/Projects/TURN%20IT%20IN/tii%20description.png?raw=true">
+                    <img class="turnitinText" src="https://github.com/lukakas0213/lucasportfolio/blob/0b2e7a44778418329d4162754a683f1b25b5e16f/3.%20Projects/Projects/TURN%20IT%20IN/TURN%20IT%20IN.png?raw=true">
+                </div>
+                <div class="BreathalyzerBox box">
+                    <img class="breathalyzerImg1" src="https://github.com/lukakas0213/lucasportfolio/blob/0b2e7a44778418329d4162754a683f1b25b5e16f/3.%20Projects/Projects/breathalyzer/breath%20tnl.png?raw=true" alt="Breathalyzer Project">
+                    <img class="breathalyzerDisc" src="https://github.com/lukakas0213/lucasportfolio/blob/0b2e7a44778418329d4162754a683f1b25b5e16f/3.%20Projects/Projects/breathalyzer/breathalyzer%20description.png?raw=true">
+                    <img class="breathalyzerText" src="https://github.com/lukakas0213/lucasportfolio/blob/0b2e7a44778418329d4162754a683f1b25b5e16f/3.%20Projects/Projects/breathalyzer/BREATHALYZER.png?raw=true">
+
+                </div>
+            </div>
             `;
         } else if (target === 'skills') {
             aboutMeSection.innerHTML = `
@@ -147,3 +163,44 @@ document.addEventListener("DOMContentLoaded", () => {
     hiddenElements.forEach((el) => observer.observe(el));  // 모든 .hidden 요소를 감시
 });
 
+// const boxes = document.querySelectorAll('.projectContainer .box');
+
+// boxes.forEach(box => {
+//   box.addEventListener('mouseenter', () => {
+//     boxes.forEach(sibling => {
+//       const img = sibling.querySelector('img');
+//       if (sibling !== box) {
+//         img.classList.add('grayscale'); // 다른 프로젝트는 흑백 처리
+//       } else {
+//         img.classList.remove('grayscale'); // 호버된 프로젝트는 컬러 유지
+//       }
+//     });
+//   });
+
+//   box.addEventListener('mouseleave', () => {
+//     boxes.forEach(sibling => {
+//       sibling.querySelector('img').classList.remove('grayscale'); // 모든 프로젝트의 이미지를 컬러로 복원
+//     });
+//   });
+// });
+
+document.querySelector('.email-link').addEventListener('click', function() {
+    const email = 'dpark021@umd.edu'; // 복사할 이메일 주소
+    navigator.clipboard.writeText(email).then(() => {
+      // 팝업을 보여줌
+      const popup = document.getElementById('copy-popup');
+      popup.style.display = 'block';
+      popup.style.opacity = 1;
+  
+      // 3초 후에 팝업을 숨김
+      setTimeout(() => {
+        popup.style.opacity = 0;
+        setTimeout(() => {
+          popup.style.display = 'none';
+        }, 300); // fade out 효과 후 숨기기
+      }, 3000); // 3초 후 팝업 사라짐
+    }).catch(err => {
+      alert('Email address copied to clipboard!' + email);
+    });
+  });
+  
